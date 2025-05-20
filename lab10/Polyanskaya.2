@@ -1,0 +1,34 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+class UnionLists {
+    public static ArrayList<Integer> union(ArrayList<Integer> list1, ArrayList<Integer> list2) {
+        ArrayList<Integer> combinedList = new ArrayList<>();
+        combinedList.addAll(list1);
+        combinedList.addAll(list2);
+        return combinedList;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        ArrayList<Integer> list1 = new ArrayList<>();
+        ArrayList<Integer> list2 = new ArrayList<>();
+
+        System.out.print("Введите пять целых чисел для списка1: ");
+        for (int i = 0; i < 5; i++) {
+            list1.add(scanner.nextInt());
+        }
+
+        System.out.print("Введите пять целых чисел для списка2: ");
+        for (int i = 0; i < 5; i++) {
+            list2.add(scanner.nextInt());
+        }
+
+        ArrayList<Integer> combinedList = union(list1, list2);
+
+        System.out.print("Объединенный список равен ");
+        for (Integer num : combinedList) {
+            System.out.print(num + " ");
+        }
+    }
+}
