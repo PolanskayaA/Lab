@@ -1,0 +1,26 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+class SumArrayList {
+    public static double sum(ArrayList<Double> list) {
+        double total = 0;
+        for (double num : list) {
+            total += num;
+        }
+        return total;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        ArrayList<Double> list = new ArrayList<>();
+
+        System.out.println("Введите пять чисел:");
+        for (int i = 0; i < 5; i++) {
+            System.out.print("Число " + (i + 1) + ": ");
+            list.add(scanner.nextDouble());
+        }
+
+        double total = sum(list);
+        System.out.println("Сумма чисел: " + total);
+    }
+}
